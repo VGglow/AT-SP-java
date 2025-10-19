@@ -102,7 +102,7 @@ public class POMFlightsTests {
         loginPage.verifyFIO(fio);
 
         FlightsSearchPage searchPage = new FlightsSearchPage();
-        searchPage.findFlights("Москва","Нью-Йорк", "2025-12-31");
+        searchPage.findFlights("Москва","Нью-Йорк", "12-31-2025");
 
         FlightsFoundList flightsList = new FlightsFoundList();
         flightsList.verifySuccessfullSearch();
