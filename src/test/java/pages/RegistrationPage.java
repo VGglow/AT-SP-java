@@ -42,7 +42,6 @@ public class RegistrationPage {
         assertTrue(alert.getText().contains("Паспорт: " + passport));
         assertTrue(alert.getText().contains("Email: " + email));
         assertTrue(alert.getText().contains("Телефон: " + phone));
-//        sleep(3000);
         alert.accept();
     }
 

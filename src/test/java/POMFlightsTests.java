@@ -1,4 +1,3 @@
-import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.*;
@@ -10,7 +9,6 @@ import pages.FlightsSearchPage;
 import pages.RegistrationPage;
 
 import static com.codeborne.selenide.Selenide.open;
-import static com.codeborne.selenide.Selenide.sleep;
 
 @TestMethodOrder(MethodOrderer.DisplayName.class)
 public class POMFlightsTests {
@@ -26,7 +24,7 @@ public class POMFlightsTests {
     }
 //    @AfterEach
 //    void pause5() {
-//        sleep(2500);
+//        sleep(5000);
 //    }
 
     //Тест-кейсы
@@ -82,11 +80,9 @@ public class POMFlightsTests {
 
         //Добавить класс RegistrationPage и использовать его
         RegistrationPage regPage = new RegistrationPage();
-//        regPage.makeRegistration("Федоров Алексей Николаевич", "6789 012345", "fedorov@example.com", "+7 (678) 901-2345");
         regPage.setPassportNumber("ZXDgfh7654");
         regPage.makeRegistration();
         regPage.verifyWrongPassport();
-//        regPage.verifyRegistration("Федоров Алексей Николаевич", "6789 012345", "fedorov@example.com", "+7 (678) 901-2346");
     }
 
     @ParameterizedTest(name = "POM-05. Успешный логин. Проверка ФИО и паспорта.")
@@ -112,5 +108,4 @@ public class POMFlightsTests {
         regPage.makeRegistration();
         regPage.verifyRegistration(fio, passport, email, phone);
     }
-
 }
