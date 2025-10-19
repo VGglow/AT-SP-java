@@ -85,7 +85,7 @@ public class POMFlightsTests {
         regPage.verifyWrongPassport();
     }
 
-    @ParameterizedTest(name = "POM-05. Успешный логин. Проверка ФИО и паспорта.")
+    @ParameterizedTest(name = "POM-05. Успешная регистрация. Проверка рег. данных в алерте.")
     @CsvSource({
         "standard_user,stand_pass1,Иванов Иван Иванович,1234 567890,ivanov@example.com,+7 (123) 456-7890",
         "performance_glitch_user,perf_pass4,Кузнецов Дмитрий Сергеевич,4567 890123,kuznetsov@example.com,+7 (456) 789-0123",
