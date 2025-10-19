@@ -17,18 +17,17 @@ public class POMFlightsTests {
     @BeforeAll
     static void beforeAll() {
         SelenideLogger.addListener("allure", new AllureSelenide());
-        Configuration.browser = "edge";  // "chrome", "firefox", "edge"
-        Configuration.browserSize = "1920x1200";
+//        Configuration.browser = "edge";  // "chrome", "firefox", "edge"
+//        Configuration.browserSize = "1920x1200";
     }
     @BeforeEach
     void setUp() {
         open("https://slqa.ru/cases/DeepSeekFlights/");
-//        getWebDriver().manage().window().maximize();
     }
-    @AfterEach
-    void pause5() {
-        sleep(1500);
-    }
+//    @AfterEach
+//    void pause5() {
+//        sleep(2500);
+//    }
 
     //Тест-кейсы
 
@@ -66,7 +65,6 @@ public class POMFlightsTests {
         //Добавить проверку, что не найдены рейсы
         FlightsFoundList flightsList = new FlightsFoundList();
         flightsList.verifyNotFoundFlights();
-
     }
 
     @Test
@@ -93,9 +91,9 @@ public class POMFlightsTests {
 
     @ParameterizedTest(name = "POM-05. Успешный логин. Проверка ФИО и паспорта.")
     @CsvSource({
-            "standard_user,stand_pass1,Иванов Иван Иванович,1234 567890,ivanov@example.com,+7 (123) 456-7890",
-            "performance_glitch_user,perf_pass4,Кузнецов Дмитрий Сергеевич,4567 890123,kuznetsov@example.com,+7 (456) 789-0123",
-            "visual_user,visu_pass6,Федоров Алексей Николаевич,6789 012345,fedorov@example.com,+7 (678) 901-2345",
+        "standard_user,stand_pass1,Иванов Иван Иванович,1234 567890,ivanov@example.com,+7 (123) 456-7890",
+        "performance_glitch_user,perf_pass4,Кузнецов Дмитрий Сергеевич,4567 890123,kuznetsov@example.com,+7 (456) 789-0123",
+        "visual_user,visu_pass6,Федоров Алексей Николаевич,6789 012345,fedorov@example.com,+7 (678) 901-2345",
     })
     void successLoginTest(String username, String password, String fio, String passport, String email, String phone) {
         FlightsLoginPage loginPage = new FlightsLoginPage();
