@@ -74,7 +74,7 @@ public class POMFlightsTests {
         loginPage.login("visual_user", "visu_pass6");
 
         FlightsSearchPage searchPage = new FlightsSearchPage();
-        searchPage.findFlights("Москва","Нью-Йорк", "2025-12-31");
+        searchPage.findFlights("Москва","Нью-Йорк", "12-31-25");
 
         FlightsFoundList flightsList = new FlightsFoundList();
         flightsList.verifySuccessfullSearch();
