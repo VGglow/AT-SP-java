@@ -59,7 +59,7 @@ public class POMFlightsTests {
         loginPage.verifySuccessfulLogin();
 
         FlightsSearchPage searchPage = new FlightsSearchPage();
-        searchPage.findFlights("Казань","Париж", "2025-12-31");
+        searchPage.findFlights("Казань","Париж", "12-31-2025");
 //        searchPage.verifyPastDate();
 
         //Добавить проверку, что не найдены рейсы
@@ -74,7 +74,7 @@ public class POMFlightsTests {
         loginPage.login("visual_user", "visu_pass6");
 
         FlightsSearchPage searchPage = new FlightsSearchPage();
-        searchPage.findFlights("Москва","Нью-Йорк", "12-31-25");
+        searchPage.findFlights("Москва","Нью-Йорк", "12-31-2025");
 
         FlightsFoundList flightsList = new FlightsFoundList();
         flightsList.verifySuccessfullSearch();
